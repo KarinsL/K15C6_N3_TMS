@@ -1,0 +1,7 @@
+/* S1-02. Style riêng của form minh hoạ. */
+.ss-head{display:flex;align-items:center;gap:12px;padding:20px 24px;border-bottom:1px solid var(--line)}
+.ss-head h2{font-size:22px}
+.ss-tile{width:40px;height:40px;border-radius:var(--r);display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--blue),var(--mint))}
+.ss-form{padding:24px}
+.ss-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+@media(max-width:700px){.ss-grid{grid-template-columns:1fr}}
