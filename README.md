@@ -36,5 +36,5 @@ Hệ thống Quản lý Đào tạo (TMS) là giải pháp quản lý nội bộ
 
 ## 👨‍💻 6. Thành viên Nhóm
 - PO: Dư Thanh Hoàng
-- Leader / Scrum Master: Nguyễn Phạm Phương Lan (kiêm Developer)
-- Developers: Nguyễn Duy Kiên, Nguyễn Trung Kiên, Nguyễn Hữu Lợi, Nông Hùng Nguyên, Nguyễn Minh Ngọc, Nguyễn Thanh Ngọc, Vũ Trọng Nghĩa, Nguyễn Tất Phi
+- Leader / Scrum Master: Nguyễn Tất Phi (kiêm Developer)
+- Developers: Nguyễn Duy Kiên, Nguyễn Trung Kiên, Nguyễn Hữu Lợi, Nông Hùng Nguyên, Nguyễn Minh Ngọc, Nguyễn Thanh Ngọc, Vũ Trọng Nghĩa, Nguyễn Phạm Phương Lan
