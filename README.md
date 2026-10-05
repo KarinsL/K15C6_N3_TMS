@@ -22,7 +22,7 @@ Hệ thống Quản lý Đào tạo (TMS) là giải pháp quản lý nội bộ
 
 ## 🛠 4. Công nghệ Sử dụng (Tech Stack)
 - **Frontend:** React + TypeScript
-- **Backend:** Spring Boot 3 (Java 21), Spring Security, Spring Data JPA, Flyway
+- **Backend:** NestJS 11 (Node.js 22, TypeScript), TypeORM
 - **Database:** PostgreSQL
 - **Authentication:** JWT (Access Token + Refresh Token)
 - **CI/CD & Tools:** GitHub, Jira, Docker, Slack
@@ -32,8 +32,8 @@ Hệ thống Quản lý Đào tạo (TMS) là giải pháp quản lý nội bộ
 ### Cấu trúc thư mục
 ```
 .
-├── backend/            # Spring Boot API (com.k15c6.tms)
-│   └── src/main/resources/db/migration/   # Flyway migrations
+├── backend/            # NestJS API
+│   └── src/database/migrations/   # TypeORM migrations
 ├── frontend/           # React + TypeScript (Vite)
 ├── docker-compose.yml  # PostgreSQL + backend + frontend
 └── .github/workflows/  # CI build & test
@@ -52,17 +52,25 @@ docker compose up --build
 # 1. Database
 docker compose up -d db
 
-# 2. Backend (cần JDK 21)
-cd backend && ./mvnw spring-boot:run
+# 2. Backend (cần Node 22), chạy ở http://localhost:8080
+cd backend && npm install && npm run start:dev
 
 # 3. Frontend (cần Node 22), mở http://localhost:5173
 cd frontend && npm install && npm run dev
 ```
-Vite tự chuyển các request `/api` sang backend ở cổng 8080.
+Vite tự chuyển các request `/api` sang backend ở cổng 8080. Backend tự chạy migration khi khởi động.
+
+### Migration database
+```bash
+cd backend
+npm run migration:generate -- src/database/migrations/TenMigration   # sinh từ entity
+npm run migration:run                                                # áp dụng
+npm run migration:revert                                             # hoàn tác migration cuối
+```
 
 ### Kiểm tra trước khi tạo PR
 ```bash
-cd backend && ./mvnw verify
+cd backend && npm run lint:check && npm run build && npm test && npm run test:e2e
 cd frontend && npm run lint && npm run build
 ```
 

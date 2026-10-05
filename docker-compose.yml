@@ -18,7 +18,9 @@ services:
   backend:
     build: ./backend
     environment:
-      DB_URL: jdbc:postgresql://db:5432/${POSTGRES_DB:-tms}
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: ${POSTGRES_DB:-tms}
       DB_USERNAME: ${POSTGRES_USER:-tms}
       DB_PASSWORD: ${POSTGRES_PASSWORD:-tms}
       JWT_SECRET: ${JWT_SECRET:-change-me-local-dev-secret-at-least-32-chars}
