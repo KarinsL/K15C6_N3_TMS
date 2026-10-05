@@ -1,0 +1,16 @@
+/* S1-05. Ma trận phân quyền. */
+.pF{background:#ecfdf3;color:var(--green)}
+.pW{background:var(--soft);color:var(--blue)}
+.pR{background:#f0f1f5;color:var(--ink)}
+.pN{background:#fff;border:1px solid var(--line);color:var(--muted)}
+.pm-legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-bottom:14px;color:var(--muted);font-size:13px}
+.pm-table th{text-align:center;font-size:12px;white-space:normal;min-width:104px}
+.pm-table th:first-child{text-align:left;min-width:240px}
+.pm-table th:last-child{color:var(--blue)}
+.pm-table td{text-align:center;padding:9px 8px}
+.pm-table td:first-child{text-align:left;padding-left:16px;font-weight:500}
+.pm-table td:first-child span{display:flex;align-items:center;gap:10px}
+.pm-table td:first-child svg{color:var(--muted)}
+.pm-table select{height:30px;width:72px;border-radius:var(--r);border:1px solid transparent;font:inherit;font-weight:600;font-size:13px;padding:0 8px;cursor:pointer}
+.pm-table select.pN{border-color:var(--line)}
+.pm-table .pill svg{vertical-align:-1px}
