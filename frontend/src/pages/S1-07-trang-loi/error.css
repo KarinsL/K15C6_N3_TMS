@@ -1,0 +1,12 @@
+/* S1-07. Trang lỗi dàn cả trang. */
+.er-full{min-height:100vh;display:flex;flex-direction:column;padding:28px 40px;background:#fff}
+.er-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:var(--navy)}
+.er-brand span{width:40px;height:40px;border-radius:var(--r);display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,#9FCCFA,#0974F1)}
+.er-mid{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px 0}
+.er-num{font-size:clamp(96px,22vw,220px);font-weight:700;line-height:1;letter-spacing:-4px;background:linear-gradient(135deg,#9FCCFA,#0974F1);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.35;margin-bottom:-28px}
+.er-mid .badge{margin-bottom:22px}
+.er-mid h1{font-size:clamp(26px,4vw,40px);line-height:1.25}
+.er-mid .lead-t{font-size:17px;max-width:640px;margin:12px 0 30px}
+.er-acts{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.er-acts .btn{height:52px;min-width:210px;font-size:16px}
+@media(max-width:520px){.er-full{padding:20px}.er-acts .btn{width:100%}}
