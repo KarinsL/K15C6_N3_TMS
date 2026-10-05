@@ -22,10 +22,49 @@ Hệ thống Quản lý Đào tạo (TMS) là giải pháp quản lý nội bộ
 
 ## 🛠 4. Công nghệ Sử dụng (Tech Stack)
 - **Frontend:** React + TypeScript
-- **Backend:** Spring Boot (Java) / NestJS
+- **Backend:** Spring Boot 3 (Java 21), Spring Security, Spring Data JPA, Flyway
 - **Database:** PostgreSQL
 - **Authentication:** JWT (Access Token + Refresh Token)
 - **CI/CD & Tools:** GitHub, Jira, Docker, Slack
+
+## 🚀 Chạy dự án
+
+### Cấu trúc thư mục
+```
+.
+├── backend/            # Spring Boot API (com.k15c6.tms)
+│   └── src/main/resources/db/migration/   # Flyway migrations
+├── frontend/           # React + TypeScript (Vite)
+├── docker-compose.yml  # PostgreSQL + backend + frontend
+└── .github/workflows/  # CI build & test
+```
+
+### Chạy toàn bộ bằng Docker
+```bash
+cp .env.example .env
+docker compose up --build
+```
+- Frontend: http://localhost:3000
+- Backend: http://localhost:8080/api/v1/health
+
+### Chạy từng phần khi dev
+```bash
+# 1. Database
+docker compose up -d db
+
+# 2. Backend (cần JDK 21)
+cd backend && ./mvnw spring-boot:run
+
+# 3. Frontend (cần Node 22), mở http://localhost:5173
+cd frontend && npm install && npm run dev
+```
+Vite tự chuyển các request `/api` sang backend ở cổng 8080.
+
+### Kiểm tra trước khi tạo PR
+```bash
+cd backend && ./mvnw verify
+cd frontend && npm run lint && npm run build
+```
 
 ## 🌳 5. Quy tắc Git Flow & Quy chuẩn Cộng tác
 - `main`: Nhánh sản phẩm ổn định (Production).
